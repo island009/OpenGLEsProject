@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MyGLView.h"
+#import "RoundPointView.h"
 
 @interface ViewController ()
 
@@ -21,7 +22,10 @@
     CGRect viewSize = [[UIScreen mainScreen] bounds];
     
     CGRect frameRect = CGRectMake(0, 0, viewSize.size.width , viewSize.size.height);
-    MyGLView * glView = [[MyGLView alloc] initWithFrame:frameRect];
+//    MyGLView * glView = [[MyGLView alloc] initWithFrame:frameRect];
+    
+    RoundPointView * glView = [[RoundPointView alloc] initWithFrame:frameRect];
+    
     [self.view addSubview:glView];
     
 //    [glView setBackgroundColor:[UIColor blackColor]];

@@ -56,20 +56,20 @@
         
         glClear(GL_COLOR_BUFFER_BIT);
         
+        
+        
+        
+//        GLfloat vertices[] = {};
+//        glEnableVertexAttribArray(VERTEX_POS_INDX);
+//        
+//        glVertexAttribPointer(VERTEX_POS_INDX, 3, GL_FLOAT, GL_FALSE, 0, vertices);  //像定点着色器传递顶点数据。
+//        
+//        for(int i = 0; i < NUM_FACES; i++)
+//        {
+//            glDrawArrays(GL_TRIANGLE_FAN, i * 4, 4);   //这里必须要写 shader ，
+//        }
+        
         [context presentRenderbuffer:GL_RENDERBUFFER];
-        
-        
-        GLfloat vertices[] = {};
-        glEnableVertexAttribArray(VERTEX_POS_INDX);
-        
-        glVertexAttribPointer(VERTEX_POS_INDX, 3, GL_FLOAT, GL_FALSE, 0, vertices);
-        
-        for(int i = 0; i < NUM_FACES; i++)
-        {
-            glDrawArrays(GL_TRIANGLE_FAN, i * 4, 4);
-        }
-        
-        
     }
     return self;
 }
