@@ -14,6 +14,7 @@
 		60028D921EE7F2CA0046BC02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60028D911EE7F2CA0046BC02 /* Assets.xcassets */; };
 		60028D951EE7F2CA0046BC02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60028D931EE7F2CA0046BC02 /* LaunchScreen.storyboard */; };
 		60028DA21EE7F88C0046BC02 /* MyGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60028DA11EE7F88C0046BC02 /* MyGLView.m */; };
+		CC0061371EE83F94005760B1 /* RoundPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0061361EE83F94005760B1 /* RoundPointView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		60028D961EE7F2CA0046BC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60028DA01EE7F88C0046BC02 /* MyGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGLView.h; sourceTree = "<group>"; };
 		60028DA11EE7F88C0046BC02 /* MyGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGLView.m; sourceTree = "<group>"; };
+		CC0061351EE83F94005760B1 /* RoundPointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundPointView.h; sourceTree = "<group>"; };
+		CC0061361EE83F94005760B1 /* RoundPointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundPointView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				60028D851EE7F2CA0046BC02 /* Supporting Files */,
 				60028DA01EE7F88C0046BC02 /* MyGLView.h */,
 				60028DA11EE7F88C0046BC02 /* MyGLView.m */,
+				CC0061351EE83F94005760B1 /* RoundPointView.h */,
+				CC0061361EE83F94005760B1 /* RoundPointView.m */,
 			);
 			path = OpenGLESProject;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				60028DA21EE7F88C0046BC02 /* MyGLView.m in Sources */,
 				60028D8A1EE7F2CA0046BC02 /* AppDelegate.m in Sources */,
 				60028D871EE7F2CA0046BC02 /* main.m in Sources */,
+				CC0061371EE83F94005760B1 /* RoundPointView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +319,7 @@
 				60028D9B1EE7F2CA0046BC02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
