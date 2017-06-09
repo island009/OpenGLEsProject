@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OpenGLESProject/RoundPointView.m"
-            timestampString = "518608473.127079"
+            timestampString = "518668719.471177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "-layoutSubviews"
             landmarkType = "7">
          </BreakpointContent>
