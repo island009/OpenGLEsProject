@@ -10,10 +10,10 @@
 		60028D871EE7F2CA0046BC02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60028D861EE7F2CA0046BC02 /* main.m */; };
 		60028D8A1EE7F2CA0046BC02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60028D891EE7F2CA0046BC02 /* AppDelegate.m */; };
 		60028D8D1EE7F2CA0046BC02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60028D8C1EE7F2CA0046BC02 /* ViewController.m */; };
-		60028D901EE7F2CA0046BC02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60028D8E1EE7F2CA0046BC02 /* Main.storyboard */; };
 		60028D921EE7F2CA0046BC02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60028D911EE7F2CA0046BC02 /* Assets.xcassets */; };
-		60028D951EE7F2CA0046BC02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60028D931EE7F2CA0046BC02 /* LaunchScreen.storyboard */; };
 		60028DA21EE7F88C0046BC02 /* MyGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60028DA11EE7F88C0046BC02 /* MyGLView.m */; };
+		606F783E1EEA730F000A179F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60028D8E1EE7F2CA0046BC02 /* Main.storyboard */; };
+		606F783F1EEA730F000A179F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60028D931EE7F2CA0046BC02 /* LaunchScreen.storyboard */; };
 		CC0061371EE83F94005760B1 /* RoundPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0061361EE83F94005760B1 /* RoundPointView.m */; };
 /* End PBXBuildFile section */
 
@@ -120,8 +120,7 @@
 				TargetAttributes = {
 					60028D811EE7F2CA0046BC02 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = J86P2WMX6F;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -148,9 +147,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60028D951EE7F2CA0046BC02 /* LaunchScreen.storyboard in Resources */,
+				606F783E1EEA730F000A179F /* Main.storyboard in Resources */,
+				606F783F1EEA730F000A179F /* LaunchScreen.storyboard in Resources */,
 				60028D921EE7F2CA0046BC02 /* Assets.xcassets in Resources */,
-				60028D901EE7F2CA0046BC02 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,14 +282,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: CanWell (J86P2WMX6F)";
-				DEVELOPMENT_TEAM = J86P2WMX6F;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OpenGLESProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.canwell.whitenight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "080975f0-12d0-429a-b58b-e50508862ab3";
-				PROVISIONING_PROFILE_SPECIFIER = whitenight;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -299,13 +299,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: CanWell (J86P2WMX6F)";
-				DEVELOPMENT_TEAM = J86P2WMX6F;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OpenGLESProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.canwell.whitenight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "080975f0-12d0-429a-b58b-e50508862ab3";
-				PROVISIONING_PROFILE_SPECIFIER = whitenight;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

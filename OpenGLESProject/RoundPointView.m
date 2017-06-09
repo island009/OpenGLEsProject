@@ -56,12 +56,13 @@
        "precision highp int;"
        "layout(location = 0) in vec4 position;"
        "layout(location = 1) in float point_size;"
-       "out int test2;"
-//       "uniform int is_test;"
+        "uniform int is_test;"
+//       "flat out int test2;"
+    
        "void main(){"
           "gl_Position = position;"
           "gl_PointSize = point_size;"
-          "test2 = 2;"
+//          "test2 = 3;"
        "}"
     ;
     
@@ -72,7 +73,9 @@
         "precision highp float;"
         "precision highp int;"
         "out vec4 fragColor;"
-        "in int test2;"
+        "uniform int is_test;"
+//        "flat in int test2;"
+
         "void main(){"
            "if(1 == 3 && length(gl_PointCoord - vec2(0.5)) > 0.5){"
                  "discard;"
@@ -109,6 +112,7 @@
     }
     
     // 上传变量数据
+    
     GLint numUniforms;
     GLint maxUnfiromsLen;
     char * uniformName;
@@ -130,6 +134,7 @@
         
         switch (type) {
             case GL_BOOL:
+            case GL_INT:
                 
                 glUniform1i(location, 1);
                 
