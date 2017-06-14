@@ -15,6 +15,7 @@
 		606F783E1EEA730F000A179F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60028D8E1EE7F2CA0046BC02 /* Main.storyboard */; };
 		606F783F1EEA730F000A179F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60028D931EE7F2CA0046BC02 /* LaunchScreen.storyboard */; };
 		CC0061371EE83F94005760B1 /* RoundPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0061361EE83F94005760B1 /* RoundPointView.m */; };
+		CCB720ED1EF17AAE00585D5F /* GLBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB720EC1EF17AAE00585D5F /* GLBaseView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		60028DA11EE7F88C0046BC02 /* MyGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGLView.m; sourceTree = "<group>"; };
 		CC0061351EE83F94005760B1 /* RoundPointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundPointView.h; sourceTree = "<group>"; };
 		CC0061361EE83F94005760B1 /* RoundPointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundPointView.m; sourceTree = "<group>"; };
+		CCB720EB1EF17AAE00585D5F /* GLBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBaseView.h; sourceTree = "<group>"; };
+		CCB720EC1EF17AAE00585D5F /* GLBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBaseView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				60028DA11EE7F88C0046BC02 /* MyGLView.m */,
 				CC0061351EE83F94005760B1 /* RoundPointView.h */,
 				CC0061361EE83F94005760B1 /* RoundPointView.m */,
+				CCB720EB1EF17AAE00585D5F /* GLBaseView.h */,
+				CCB720EC1EF17AAE00585D5F /* GLBaseView.m */,
 			);
 			path = OpenGLESProject;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 				TargetAttributes = {
 					60028D811EE7F2CA0046BC02 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 463PEV97YU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -162,6 +168,7 @@
 			files = (
 				60028D8D1EE7F2CA0046BC02 /* ViewController.m in Sources */,
 				60028DA21EE7F88C0046BC02 /* MyGLView.m in Sources */,
+				CCB720ED1EF17AAE00585D5F /* GLBaseView.m in Sources */,
 				60028D8A1EE7F2CA0046BC02 /* AppDelegate.m in Sources */,
 				60028D871EE7F2CA0046BC02 /* main.m in Sources */,
 				CC0061371EE83F94005760B1 /* RoundPointView.m in Sources */,
@@ -282,15 +289,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 463PEV97YU;
 				INFOPLIST_FILE = OpenGLESProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.canwell.whitenight;
+				PRODUCT_BUNDLE_IDENTIFIER = com.island.OpenGL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -298,15 +307,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: CanWell (J86P2WMX6F)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 463PEV97YU;
 				INFOPLIST_FILE = OpenGLESProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.canwell.whitenight;
+				PRODUCT_BUNDLE_IDENTIFIER = com.island.OpenGL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

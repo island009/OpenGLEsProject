@@ -1,8 +1,0 @@
-vertex shader 用 vs表示
-fragment shader 用 fs表示
-
-1 在ES3.0中不能在使用varying 和 attribute ，varying 用int 和out 来在vertex 和 fragment 中分别定义。
-
-2 2.0的时候varying 用于vertex 和 fragment 之间传递数据， 但是现在用in 和out 处理，在vertex shader里面由out 定义， 在fragment 里面用in 定义，但是由于fragment shader里面的是做了插值计算的， 所以需要给变量定义加上 flat ， 同时也要在vs中添加flat保持变量类型一致。
-
-3 

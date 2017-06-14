@@ -8,6 +8,9 @@
 
 #import "RoundPointView.h"
 
+
+
+
 @implementation RoundPointView
 
 /*
@@ -50,45 +53,41 @@
     
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, renderbuffer);
     
-    const char * vertextShaderContent =
+    const char * vs_Content =
        "#version 300 es\n"
        "precision highp float;"
 //       "precision highp int;"
        "layout(location = 0) in vec4 position;"
        "layout(location = 1) in float point_size;"
-        "uniform int is_test;"
+        "uniform float is_test;"
        "flat out int test2;"
-    
        "void main(){"
           "gl_Position = position;"
           "gl_PointSize = point_size;"
-//          "test2 = 3;"
+          "test2 = 1;"
+          "if(is_test == 1.0){"
+                "test2 = 2;"
+          "}"
        "}"
     ;
     
-    const char * vs_uniform =
-    "#version 300 es \n"
-    "layout(location = 0) in vec4 position;\n"
-    "layout(location = 1) in float point_size;\n"
-    "uniform bool test;\n"
-    "void main(){"
-        "gl_Position = position;"
-        "gl_PointSize = point_size;"
-    "}"
-    ;
+    GLuint vertextShader = compileShader(vs_Content,GL_VERTEX_SHADER);
     
-    GLuint vertextShader = compileShader(vs_uniform,GL_VERTEX_SHADER);
+    const char * fs_Content =
+        "#version 300 es\n"
+        "precision highp float;"
+        "precision highp int;"
+        "out vec4 fragColor;"
+        "uniform float is_test;"
+        "flat in int test2;"
+        "void main(){"
+           "if(is_test == 1.0 && test2 == 2 &&  length(gl_PointCoord - vec2(0.5)) > 0.5){"
+                 "discard;"
+           "}"
+           "fragColor = vec4(1.0,0.0,1.0,1.0);"
+        "}";
     
-    const char * fs_uniform =
-    "#version 300 es \n"
-    "precision highp float;\n"
-    "out vec4 fragColor;\n"
-    "uniform bool test\n;"
-    "void main(){"
-       "fragColor = vec4(1.0,0.0,1.0,1.0);"
-    "}";
-    
-    GLuint fargmentShader = compileShader(fs_uniform, GL_FRAGMENT_SHADER);
+    GLuint fargmentShader = compileShader(fs_Content, GL_FRAGMENT_SHADER);
     
     GLuint program = glCreateProgram();
     glAttachShader(program, vertextShader);
@@ -115,6 +114,7 @@
         
         
     }
+    glUseProgram(program);
     
     // 上传变量数据
     
@@ -137,22 +137,36 @@
         
         location = glGetUniformLocation(program, uniformName);
         
+        
+        char* str = malloc(sizeof(char) * 1);
+//        sprintf(str,"%x",9999999);
+        sprintf(str, "%s","jjjjjjjjjjjjj");
+        
         switch (type) {
-            case GL_BOOL:
-            case GL_INT:
+            case GL_FLOAT:
+            {
+//                GLint value = 1;
                 
-                glUniform1i(location, 1);
+                glUniform1f(location, 1.0);
+//                glUniform1i(location, 1);
                 
-//                glUniform1f(location, GL_TRUE);
+                //                glUniform1f(location, GL_TRUE);
                 break;
+            }
+
                 
             default:
                 break;
         }
+        
+        free(str);
     }
     
+   GLenum errorEnum = glGetError();
     
-    glUseProgram(program);
+    NSLog(@"%d",errorEnum); // GL_NO_ERROR
+    
+//    glUseProgram(program);
     
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
