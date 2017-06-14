@@ -53,11 +53,11 @@
     const char * vertextShaderContent =
        "#version 300 es\n"
        "precision highp float;"
-       "precision highp int;"
+//       "precision highp int;"
        "layout(location = 0) in vec4 position;"
        "layout(location = 1) in float point_size;"
         "uniform int is_test;"
-//       "flat out int test2;"
+       "flat out int test2;"
     
        "void main(){"
           "gl_Position = position;"
@@ -66,24 +66,29 @@
        "}"
     ;
     
-    GLuint vertextShader = compileShader(vertextShaderContent,GL_VERTEX_SHADER);
+    const char * vs_uniform =
+    "#version 300 es \n"
+    "layout(location = 0) in vec4 position;\n"
+    "layout(location = 1) in float point_size;\n"
+    "uniform bool test;\n"
+    "void main(){"
+        "gl_Position = position;"
+        "gl_PointSize = point_size;"
+    "}"
+    ;
     
-    const char * fargmentShaderContext =
-        "#version 300 es\n"
-        "precision highp float;"
-        "precision highp int;"
-        "out vec4 fragColor;"
-        "uniform int is_test;"
-//        "flat in int test2;"
-
-        "void main(){"
-           "if(1 == 3 && length(gl_PointCoord - vec2(0.5)) > 0.5){"
-                 "discard;"
-           "}"
-           "fragColor = vec4(1.0,0.0,1.0,1.0);"
-        "}";
+    GLuint vertextShader = compileShader(vs_uniform,GL_VERTEX_SHADER);
     
-    GLuint fargmentShader = compileShader(fargmentShaderContext, GL_FRAGMENT_SHADER);
+    const char * fs_uniform =
+    "#version 300 es \n"
+    "precision highp float;\n"
+    "out vec4 fragColor;\n"
+    "uniform bool test\n;"
+    "void main(){"
+       "fragColor = vec4(1.0,0.0,1.0,1.0);"
+    "}";
+    
+    GLuint fargmentShader = compileShader(fs_uniform, GL_FRAGMENT_SHADER);
     
     GLuint program = glCreateProgram();
     glAttachShader(program, vertextShader);
