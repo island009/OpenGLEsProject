@@ -51,8 +51,8 @@
     const char * vs_content = [self getVertexShaderContent ];
     const char * fs_content = [self getFragmentShaderContext ];
     
-    GLuint vsShader = compileShader(vs_content, GL_VERTEX_SHADER);
-    GLuint fsShader = compileShader(fs_content, GL_FRAGMENT_SHADER);
+    GLuint vsShader = compile_Shader(vs_content, GL_VERTEX_SHADER);
+    GLuint fsShader = compile_Shader(fs_content, GL_FRAGMENT_SHADER);
     
     
     GLuint program = glCreateProgram();
@@ -96,7 +96,7 @@
     return "";
 }
 
-GLuint compileShader(const char * content,GLenum shaderType)
+GLuint compile_Shader(const char * content,GLenum shaderType)
 {
     GLuint shader = glCreateShader(shaderType);
     
