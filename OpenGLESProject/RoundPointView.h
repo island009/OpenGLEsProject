@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <OpenGLES/ES3/gl.h>
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
+
+
 @interface RoundPointView : UIView
 
 @end

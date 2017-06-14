@@ -8,6 +8,9 @@
 
 #import "RoundPointView.h"
 
+
+
+
 @implementation RoundPointView
 
 /*
@@ -56,13 +59,12 @@
        "precision highp int;"
        "layout(location = 0) in vec4 position;"
        "layout(location = 1) in float point_size;"
-        "uniform int is_test;"
-//       "flat out int test2;"
-    
+//        "uniform int is_test;"
        "void main(){"
           "gl_Position = position;"
           "gl_PointSize = point_size;"
-//          "test2 = 3;"
+//          "if(is_test == 1){"
+//          "}"
        "}"
     ;
     
@@ -73,11 +75,9 @@
         "precision highp float;"
         "precision highp int;"
         "out vec4 fragColor;"
-        "uniform int is_test;"
-//        "flat in int test2;"
-
+        "uniform float is_test;"
         "void main(){"
-           "if(1 == 3 && length(gl_PointCoord - vec2(0.5)) > 0.5){"
+           "if(is_test == 1.0 && length(gl_PointCoord - vec2(0.5)) > 0.5){"
                  "discard;"
            "}"
            "fragColor = vec4(1.0,0.0,1.0,1.0);"
@@ -132,18 +132,29 @@
         
         location = glGetUniformLocation(program, uniformName);
         
+        
+        char* str = malloc(sizeof(char) * 1);
+//        sprintf(str,"%x",9999999);
+        sprintf(str, "%s","jjjjjjjjjjjjj");
+        
         switch (type) {
             case GL_BOOL:
             case GL_INT:
+            {
+//                GLint value = 1;
                 
-                glUniform1i(location, 1);
+                glUniform1i(location, 1.0);
                 
-//                glUniform1f(location, GL_TRUE);
+                //                glUniform1f(location, GL_TRUE);
                 break;
+            }
+
                 
             default:
                 break;
         }
+        
+        free(str);
     }
     
     
