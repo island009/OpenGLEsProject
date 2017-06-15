@@ -37,6 +37,7 @@
     context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
     [EAGLContext setCurrentContext:context];
     
+    
     GLuint renderbuffer;
     glGenRenderbuffers(1, &renderbuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, renderbuffer);
@@ -148,7 +149,7 @@
 //                GLint value = 1;
                 
                 glUniform1f(location, 1.0);
-//                glUniform1i(location, 1);
+//                glUniform1i(location, 1); // is error
                 
                 //                glUniform1f(location, GL_TRUE);
                 break;

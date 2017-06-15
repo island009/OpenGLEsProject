@@ -3,6 +3,20 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[TestBaseGlView doGLOpertaion]:TestBaseGlView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[GLBaseView layoutSubviews]:GLBaseView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.layer">
+            </PersistentString>
+            <PersistentString
+               value = "glLayer.frame.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[RoundPointView layoutSubviews]:RoundPointView.m">
          <PersistentStrings>
             <PersistentString

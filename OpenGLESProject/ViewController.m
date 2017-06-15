@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "MyGLView.h"
 #import "RoundPointView.h"
+#import "TestBaseGlView.h"
+#import "GLBaseView.h"
 
 @interface ViewController ()
 
@@ -24,7 +26,11 @@
     CGRect frameRect = CGRectMake(0, 0, viewSize.size.width , viewSize.size.height);
 //    MyGLView * glView = [[MyGLView alloc] initWithFrame:frameRect];
     
-    RoundPointView * glView = [[RoundPointView alloc] initWithFrame:frameRect];
+//    RoundPointView * glView = [[RoundPointView alloc] initWithFrame:frameRect];
+//    TestBaseGlView * glView = [[TestBaseGlView alloc] initWithFrame:frameRect];
+    
+    GLBaseView * glView = NULL;
+    glView = [[TestBaseGlView alloc] initWithFrame:frameRect];
     
     [self.view addSubview:glView];
     

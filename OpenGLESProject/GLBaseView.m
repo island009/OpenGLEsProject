@@ -9,6 +9,7 @@
 #import "GLBaseView.h"
 
 @implementation GLBaseView
+@synthesize glLayer,glContext,program,renderbufferWidth,renderbufferHeight;
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -27,18 +28,17 @@
 {
     [super layoutSubviews];
     
-    glLayer = (CAEAGLLayer*)self.layer;  // 创建opengl 输出的视窗口
-    glLayer.contentsScale = [UIScreen mainScreen].scale;
+    self.glLayer = (CAEAGLLayer*)self.layer;  // 创建opengl 输出的视窗口
+    self.glLayer.contentsScale = [UIScreen mainScreen].scale;
     
-    glContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3]; // 创建渲染上下文
-    [EAGLContext setCurrentContext:glContext];
+    self.glContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3]; // 创建渲染上下文
+    [EAGLContext setCurrentContext:self.glContext];
     
     GLuint renderbuffer;
     glGenRenderbuffers(1, &renderbuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, renderbuffer);
-    [glContext renderbufferStorage:GL_RENDERBUFFER fromDrawable:glLayer];
-    
-    GLint renderbufferWidth , renderbufferHeight;
+    [self.glContext renderbufferStorage:GL_RENDERBUFFER fromDrawable:self.glLayer];
+
     glGetRenderbufferParameteriv(renderbuffer, GL_RENDERBUFFER_WIDTH, &renderbufferWidth);
     glGetRenderbufferParameteriv(renderbuffer, GL_RENDERBUFFER_HEIGHT, &renderbufferHeight);
     
@@ -55,33 +55,75 @@
     GLuint fsShader = compile_Shader(fs_content, GL_FRAGMENT_SHADER);
     
     
-    GLuint program = glCreateProgram();
-    glAttachShader(program, vsShader);
-    glAttachShader(program, fsShader);
+    self.program = glCreateProgram();
+    glAttachShader(self.program, vsShader);
+    glAttachShader(self.program, fsShader);
     
-    glLinkProgram(program);
+    glLinkProgram(self.program);
     
     GLint linkStatus;
-    glGetProgramiv(program, GL_LINK_STATUS, &linkStatus);
+    glGetProgramiv(self.program, GL_LINK_STATUS, &linkStatus);
     if(linkStatus == GL_FALSE)
     {
         GLint logLength;
-        glGetProgramiv(program, GL_INFO_LOG_LENGTH, &logLength);
+        glGetProgramiv(self.program, GL_INFO_LOG_LENGTH, &logLength);
         if(logLength > 0 )
         {
             GLchar * infoLog = malloc(sizeof(GLchar) * logLength);
-            glGetProgramInfoLog(program, logLength, NULL, infoLog);
+            glGetProgramInfoLog(self.program, logLength, NULL, infoLog);
             
             printf("link program is error --> %s",infoLog);
             
-            glDeleteProgram(program);
+            glDeleteProgram(self.program);
             free(infoLog);
         }
     }
     
-    glUseProgram(program);
+    glUseProgram(self.program);
+    
+    [self checkGLError];
     
     
+    [self doGLOpertaion];
+    
+    [self checkGLError];
+    
+    [self.glContext presentRenderbuffer:GL_RENDERBUFFER];
+}
+
+-(void)checkGLError
+{
+    GLenum errorEnum = glGetError();
+    switch (errorEnum) {
+        case GL_NO_ERROR:
+            
+            NSLog(@"OpengGL is not error");
+            
+            break;
+        case GL_INVALID_ENUM:
+            NSLog(@"GL Error GL_INVALID_ENUM");
+            break;
+        case GL_INVALID_VALUE:
+            NSLog(@"GL Error GL_INVALID_VALUE");
+            break;
+        case GL_INVALID_OPERATION:
+            NSLog(@"GL Error GL_INVALID_OPERATION");
+            break;
+        case GL_OUT_OF_MEMORY:
+            NSLog(@"GL Error GL_OUT_OF_MEMORY");
+            break;
+        case GL_INVALID_FRAMEBUFFER_OPERATION:
+            NSLog(@"GL Error GL_INVALID_FRAMEBUFFER_OPERATION");
+            break;
+        default:
+            NSLog(@"GL Error no catch errorEnum = %d",errorEnum);
+            break;
+    }
+    
+}
+
+-(void)doGLOpertaion
+{
     
 }
 

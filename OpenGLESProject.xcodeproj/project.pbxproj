@@ -12,6 +12,7 @@
 		60028D8D1EE7F2CA0046BC02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60028D8C1EE7F2CA0046BC02 /* ViewController.m */; };
 		60028D921EE7F2CA0046BC02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60028D911EE7F2CA0046BC02 /* Assets.xcassets */; };
 		60028DA21EE7F88C0046BC02 /* MyGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60028DA11EE7F88C0046BC02 /* MyGLView.m */; };
+		605D507B1EF22F9600BC94CC /* TestBaseGlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D507A1EF22F9600BC94CC /* TestBaseGlView.m */; };
 		606F783E1EEA730F000A179F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60028D8E1EE7F2CA0046BC02 /* Main.storyboard */; };
 		606F783F1EEA730F000A179F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60028D931EE7F2CA0046BC02 /* LaunchScreen.storyboard */; };
 		CC0061371EE83F94005760B1 /* RoundPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0061361EE83F94005760B1 /* RoundPointView.m */; };
@@ -31,6 +32,8 @@
 		60028D961EE7F2CA0046BC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60028DA01EE7F88C0046BC02 /* MyGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGLView.h; sourceTree = "<group>"; };
 		60028DA11EE7F88C0046BC02 /* MyGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGLView.m; sourceTree = "<group>"; };
+		605D50791EF22F9600BC94CC /* TestBaseGlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBaseGlView.h; sourceTree = "<group>"; };
+		605D507A1EF22F9600BC94CC /* TestBaseGlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBaseGlView.m; sourceTree = "<group>"; };
 		CC0061351EE83F94005760B1 /* RoundPointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundPointView.h; sourceTree = "<group>"; };
 		CC0061361EE83F94005760B1 /* RoundPointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundPointView.m; sourceTree = "<group>"; };
 		CCB720EB1EF17AAE00585D5F /* GLBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBaseView.h; sourceTree = "<group>"; };
@@ -82,6 +85,8 @@
 				CC0061361EE83F94005760B1 /* RoundPointView.m */,
 				CCB720EB1EF17AAE00585D5F /* GLBaseView.h */,
 				CCB720EC1EF17AAE00585D5F /* GLBaseView.m */,
+				605D50791EF22F9600BC94CC /* TestBaseGlView.h */,
+				605D507A1EF22F9600BC94CC /* TestBaseGlView.m */,
 			);
 			path = OpenGLESProject;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 				60028D8A1EE7F2CA0046BC02 /* AppDelegate.m in Sources */,
 				60028D871EE7F2CA0046BC02 /* main.m in Sources */,
 				CC0061371EE83F94005760B1 /* RoundPointView.m in Sources */,
+				605D507B1EF22F9600BC94CC /* TestBaseGlView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +299,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 463PEV97YU;
 				INFOPLIST_FILE = OpenGLESProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.island.OpenGL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -311,7 +317,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 463PEV97YU;
 				INFOPLIST_FILE = OpenGLESProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.island.OpenGL;
 				PRODUCT_NAME = "$(TARGET_NAME)";

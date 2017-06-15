@@ -10,17 +10,26 @@
 #import <OpenGLES/ES3/gl.h>
 
 @interface GLBaseView : UIView
-
+@property(nonatomic,retain) CAEAGLLayer * glLayer;
+@property(nonatomic,retain) EAGLContext * glContext;
+@property(nonatomic) GLuint program;
+@property(nonatomic) GLint  renderbufferWidth;
+@property(nonatomic) GLint renderbufferHeight;
 @end
 
 @interface GLBaseView (){
     
     CAEAGLLayer * glLayer;
-    
     EAGLContext * glContext;
+    GLuint  program;
+    GLint  renderbufferWidth;
+    GLint  renderbufferHeight;
 }
+
+
 
 -(const char *)getVertexShaderContent;
 -(const char *)getFragmentShaderContext;
-
+-(void)doGLOpertaion;
+-(void)checkGLError;
 @end
