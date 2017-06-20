@@ -38,9 +38,13 @@
     glGenRenderbuffers(1, &renderbuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, renderbuffer);
     [self.glContext renderbufferStorage:GL_RENDERBUFFER fromDrawable:self.glLayer];
-
-    glGetRenderbufferParameteriv(renderbuffer, GL_RENDERBUFFER_WIDTH, &renderbufferWidth);
-    glGetRenderbufferParameteriv(renderbuffer, GL_RENDERBUFFER_HEIGHT, &renderbufferHeight);
+    
+    [self checkGLError];
+    
+    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &renderbufferWidth);
+    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &renderbufferHeight);
+    
+    [self checkGLError];
     
     // 定义帧缓存
     GLuint framebuffer;

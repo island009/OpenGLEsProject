@@ -68,8 +68,6 @@
 {
     [super layoutSubviews];
     
-    CALayer * layer = self.layer;
-    
 }
 
 -(void)doGLOpertaion
